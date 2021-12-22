@@ -9,7 +9,7 @@
         submitButtonPreviousState = "undefined",
         categoriesCheckBoxPreviousState = "undefined",
         sourcesCheckBoxPreviousState = "undefined",
-        categories = ["SOFTWAREANDSERVICES", "SELFANDHELP", "ANDTRAVEL", "ANDSPORTS", "COOKINGANDFOODANDWINE", "COMPUTERSANDINTERNET", "BUSINESSANDINVESTMENT", "SPIRITUALITYANDALTERNATIVEBELIEFS", "ANDREFERENCE", "POLITICSANDCURRENTEVENTS", "PARENTINGANDFAMILIES", "ANDMOBILE", "ANDLANGUAGES", "HOMEANDGARDEN", "HEALTHANDFITNESS", "ANDGREENPRODUCTS", "ANDGAMES", "ANDFICTION", "EMPLOYMENTANDJOBS", "ANDEDUCATION", "EBUSINESSANDEMARKETING", "ANDBETTINGSYSTEMS", "ANDASSEENONTV", "ARTSANDENTERTAINMENT", "ANDGIVEAWAYS"];
+        categories = ["SOFTWAREANDSERVICES", "SELFANDHELP", "ANDTRAVEL", "ANDSPORTS", "COOKINGANDFOODANDWINE", "COMPUTERSANDINTERNET", "BUSINESSANDINVESTMENT", "SPIRITUALITYANDALTERNATIVEBELIEFS", "ANDREFERENCE", "POLITICSANDCURRENTEVENTS", "PARENTINGANDFAMILIES", "ANDMOBILE", "ANDLANGUAGES", "HOMEANDGARDEN", "HEALTHANDFITNESS", "ANDGREENPRODUCTS", "ANDGAMES", "ANDFICTION", "EMPLOYMENTANDJOBS", "ANDEDUCATION", "EBUSINESSANDEMARKETING", "ANDBETTINGSYSTEMS", "ANDASSEENONTV", "ARTSANDENTERTAINMENT", "ANDSHOPPING", "ANDGIVEAWAYS"];
 
 
     $(document).ready(function () {
@@ -88,6 +88,10 @@
         });
 
         $("#1y").click(function () {
+            $(".SHOPPING").toggle(200);
+        });
+		
+		$("#1z").click(function () {
             $(".GIVEAWAYS").toggle(200);
         });
 
@@ -129,7 +133,12 @@
                     $(".buttonsets").show(50);
                 });
             });
-
+			if(previousTarget!="undefined"){
+				$(previousTarget).css("color",previousColour);
+				previousElement="undefined";
+				previousTarget="undefined";
+				changevalue=0;
+			}
         });
 
 
@@ -217,6 +226,13 @@
                     }
                 }
             }
+			
+			if(previousTarget!="undefined"){
+				$(previousTarget).css("color",previousColour);
+				previousElement="undefined";
+				previousTarget="undefined";
+				changevalue=0;
+			}
             //$("#search2").val("");
             //$(".loader").hide();
         });
