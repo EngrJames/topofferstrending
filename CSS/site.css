@@ -256,6 +256,12 @@ textarea {
         display: none;
     }
 }
+
+@media screen and (max-width: 286px) {
+    #contactus a {
+        font-size: 12px;
+    }
+}
 @media screen and (max-width: 499px) {
     .carousel {
         width: 100%;
