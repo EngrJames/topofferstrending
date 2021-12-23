@@ -256,7 +256,6 @@ textarea {
         display: none;
     }
 }
-
 @media screen and (max-width: 286px) {
     #contactus a {
         font-size: 12px;

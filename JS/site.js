@@ -90,8 +90,8 @@
         $("#1y").click(function () {
             $(".SHOPPING").toggle(200);
         });
-		
-		$("#1z").click(function () {
+
+        $("#1z").click(function () {
             $(".GIVEAWAYS").toggle(200);
         });
 
@@ -133,12 +133,12 @@
                     $(".buttonsets").show(50);
                 });
             });
-			if(previousTarget!="undefined"){
-				$(previousTarget).css("color",previousColour);
-				previousElement="undefined";
-				previousTarget="undefined";
-				changevalue=0;
-			}
+            if (previousTarget != "undefined") {
+                $(previousTarget).css("color", previousColour);
+                previousElement = "undefined";
+                previousTarget = "undefined";
+                changevalue = 0;
+            }
         });
 
 
@@ -226,13 +226,13 @@
                     }
                 }
             }
-			
-			if(previousTarget!="undefined"){
-				$(previousTarget).css("color",previousColour);
-				previousElement="undefined";
-				previousTarget="undefined";
-				changevalue=0;
-			}
+
+            if (previousTarget != "undefined") {
+                $(previousTarget).css("color", previousColour);
+                previousElement = "undefined";
+                previousTarget = "undefined";
+                changevalue = 0;
+            }
             //$("#search2").val("");
             //$(".loader").hide();
         });
@@ -300,7 +300,7 @@
                 });
 
             }
-
+            $(window).scrollTop(0);
         }
 
         $(window).scrollTop(0);
