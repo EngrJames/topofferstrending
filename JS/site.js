@@ -142,19 +142,20 @@
         });
 
 
-        /*$(".scroll").click(function(e) {
+        $(".scroll").click(function(e) {
         e.preventDefault();
         var aid = $(this).attr("href");
-        $('html,body').animate({scrollTop: $(aid).offset().top},'slow');
-    });**/
-
+        $('html,body').animate({scrollTop: $(aid).offset().top},'fast');
+    });
+		
+		
 
         //Get the button
         var mybutton = document.getElementById("myBtn");
 
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
-            scrollFunction()
+            scrollFunction();
         };
 
         function scrollFunction() {
@@ -300,7 +301,6 @@
                 });
 
             }
-            $(window).scrollTop(0);
         }
 
         $(window).scrollTop(0);
