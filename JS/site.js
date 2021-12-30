@@ -239,6 +239,9 @@
             //$(".loader").hide();
         });
 
+		$("#cancelit").click(function () {
+			$("#cancel").click();
+		});
 
         $("#cancel").click(function () {
             var submitButton = document.getElementById("submit");
@@ -275,6 +278,7 @@
             $(".myInput").slideUp(50, 0, function () {
                 $(".example").slideDown(200, 0, function () {
                     $(".buttonsets").slideDown(50);
+					slideCategoriesSearch();
                 });
             });
         });
@@ -374,6 +378,7 @@
             for (var i = 0; i < sourceCheckBoxes.length; i++) {
                 sourceCheckBoxes[i].checked = true;
             }
+			$("#cancelit").slideUp();
             $("#categor").slideDown();
             $(categoriesCheckBoxes).slideDown();
         } else {
@@ -384,6 +389,7 @@
             for (var k = 0; k < categoriesCheckBoxes.length - 2; k++) {
                 categoriesCheckBoxes[k].checked = false;
             }
+			$("#cancelit").slideDown();
             $("#categor").slideUp();
             $(categoriesCheckBoxes).slideUp();
         }
@@ -433,6 +439,7 @@
         var categoriesCheckBoxes = document.getElementById("categoriesitems");
         for (var i = 0; i < sourceCheckBoxes.length; i++) {
             if (sourceCheckBoxes[i].checked == true) {
+				$("#cancelit").slideUp();
                 $("#categor").slideDown();
                 $(categoriesCheckBoxes).slideDown();
                 break;
@@ -441,6 +448,7 @@
                 for (var k = 0; k < categoriesCheckBoxes.length - 2; k++) {
                     categoriesCheckBoxes[k].checked = false;
                 }
+				$("#cancelit").slideDown();
                 categoriesCheckBox.checked = false;
                 $("#categor").slideUp();
                 $(categoriesCheckBoxes).slideUp();
