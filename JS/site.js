@@ -192,7 +192,7 @@
                     for (var j = 0; j < categories.length; j++) {
                         var categorySize = $("." + sources[i] + " > " + "." + categories[j]).length;
                         for (var m = 0; m < categorySize; m++) {
-                            if ($($("." + sources[i] + " > " + "." + categories[j])[m]).text().search(searchPattern) >= 0) {
+                            if ($($("." + sources[i] + " > " + "." + categories[j])[m]).text().replace(/learn more/i, "").search(searchPattern) >= 0) {
                                 searchedResults.push($($("." + sources[i] + " > " + "." + categories[j])[m]));
                             }
                         }
@@ -205,7 +205,7 @@
                     for (var l = 0; l < selectedCategories.length; l++) {
                         var categorySize = $("." + selectedSources[k] + " > " + "." + selectedCategories[l]).length;
                         for (var m = 0; m < categorySize; m++) {
-                            if ($($("." + selectedSources[k] + " > " + "." + selectedCategories[l])[m]).text().search(searchPattern) >= 0) {
+                            if ($($("." + selectedSources[k] + " > " + "." + selectedCategories[l])[m]).text().replace(/learn more/i, "").search(searchPattern) >= 0) {
                                 searchedResults.push($($("." + selectedSources[k] + " > " + "." + selectedCategories[l])[m]));
                             }
                         }
@@ -234,6 +234,7 @@
                 previousTarget = "undefined";
                 changevalue = 0;
             }
+			$(window).scrollTop(0);
             //$("#search2").val("");
             //$(".loader").hide();
         });
