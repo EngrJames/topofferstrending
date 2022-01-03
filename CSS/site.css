@@ -238,8 +238,9 @@ textarea {
         font-size: 15px;
     }
 }
-#nonexist, #nonexistingoffer {
+#nonexist, #nonexistingoffer, #nonexistsearch{
     display: none;
+	color:rgba(208,5,8,1.00);
 }
 .carousel {
     width: 30%;
@@ -326,7 +327,7 @@ textarea {
         transform: rotate(360deg);
     }
 }
-.Clickbank #nonexist h3, #nonexistingoffer h3 {
+.Clickbank #nonexist h3, #nonexistingoffer h3, #nonexistsearch h3 {
     border: none;
     text-transform: none;
     font-size: 20px;

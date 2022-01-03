@@ -97,6 +97,8 @@
 
 
         $("#submit").click(function () {
+			$("#nonexist").hide(50);
+			$("#nonexistsearch").hide(50);
             selectedCategories = [];
             selectedSources = [];
             var categoriesCheckBoxes = document.getElementById("categoriesitems");
@@ -116,6 +118,7 @@
                 if (categoriesCheckBoxes[k].checked)
                     selectedCategories.push(categories[k]);
             }
+			
 
             for (var j = 0; j < selectedSources.length; j++) {
                 for (var l = 0; l < selectedCategories.length; l++) {
@@ -178,6 +181,7 @@
 
         $("#productsearch").click(function () {
             //selectedCategories = []; selectedSources=[];
+			$("#nonexist").hide(50);
             var searchString = $("#search2").val();
             if (searchString == "") {
                 return
@@ -216,11 +220,12 @@
             $(".categories").hide(50);
             if (searchedResults.length == 0) {
                 $(".loader").hide();
+				$("#nonexistsearch").show(50);
             } else {
                 for (var m = 0; m < searchedResults.length; m++) {
                     if (m == searchedResults.length - 1) {
                         searchedResults[m].show(50, function () {
-                            $(".loader").hide();
+                            $(".loader").hide();$("#nonexistsearch").hide(50);
                         });
                     } else {
                         searchedResults[m].show(50);
@@ -313,6 +318,7 @@
 
 
     function loadContent(content) {
+		$("#nonexistsearch").hide(50);
         if (content === previousElement)
             return;
         if (previousTarget != $(Event.target)) {
@@ -431,7 +437,7 @@
 
         enableInput();
     }
-
+   
 
     function slideCategoriesSearch() {
         var categoriesCheckBox = document.getElementById("Categories");
