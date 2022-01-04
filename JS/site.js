@@ -274,7 +274,7 @@
                     categoriesCheckBoxes[k].checked = false;
                 }
 
-                submitButton.disabled = true;;
+                submitButton.disabled = true;
                 categoriesCheckBox.checked = false;
                 sourceCheckBox.checked = false;
 
@@ -289,12 +289,18 @@
         });
 
         const splitURL = window.location.href.split("#");
-        if (splitURL.length > 1) {
-            const inner = splitURL[0].split("/");
+		const inner = splitURL[0].split("/");
             var length = inner.length;
+        if (splitURL.length > 1) {
+			if(splitURL[1]==""){
+				loadStoreOffer("#xxxx");
+			}else{
             if (inner[length - 1] == "store.html")
                 loadStoreOffer("#" + splitURL[1]);
-        }
+			}
+        }else if(inner[length - 1] == "store.html" && splitURL.length == 1){
+			loadStoreOffer("#enterid")
+		}
 
         function loadStoreOffer(content) {
             $(".loader").show();
