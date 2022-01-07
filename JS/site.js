@@ -288,7 +288,7 @@
             });
         });
 
-        const splitURL = window.location.href.split("#");
+        const splitURL = window.location.href.split("?");
 		const inner = splitURL[0].split("/");
             var length = inner.length;
         if (splitURL.length > 1) {
@@ -296,7 +296,8 @@
 				loadStoreOffer("#xxxx");
 			}else{
             if (inner[length - 1] == "store.html")
-                loadStoreOffer("#" + splitURL[1]);
+				//add the split("&") in case backlinks that has additinal parameters
+                loadStoreOffer("#" + (splitURL[1]).split("=")[1].split("&")[0]);
 			}
         }else if(inner[length - 1] == "store.html" && splitURL.length == 1){
 			loadStoreOffer("#enterid")
